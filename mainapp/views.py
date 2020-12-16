@@ -1,10 +1,20 @@
 from django.shortcuts import render
+from mainapp.models import Product, ProductCategory
 
 def index(request):
     return render(request, 'mainapp/index.html')
 
 def products(request):
-    return render(request, 'mainapp/products.html')
+    context = {
+        'products': Product.objects.all(),
+    }
+    return render(request, 'mainapp/products.html', context=context)
+
+def category(request):
+    context = {
+        'category': ProductCategory.objects.all(),
+    }
+    return render(request, 'mainapp/products.html', context=context)
 
 def test_context(request):
     context = {
