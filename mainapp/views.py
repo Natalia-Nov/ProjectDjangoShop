@@ -10,11 +10,11 @@ def products(request):
     }
     return render(request, 'mainapp/products.html', context=context)
 
-def category(request):
-    context = {
-        'category': ProductCategory.objects.all(),
-    }
-    return render(request, 'mainapp/products.html', context=context)
+#def category(request):
+#    context = {
+#        'categorys': ProductCategory.objects.all(),
+#    }
+#    return render(request, 'mainapp/products.html', context=context)
 
 def test_context(request):
     context = {
